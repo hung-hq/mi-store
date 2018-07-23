@@ -23,6 +23,7 @@ public class HomeController {
     @ResponseBody
     public List<User> findAllUsers(){
         return userService.findAll();
+//        return userService.findByTop(3);
     }
 
     @Autowired

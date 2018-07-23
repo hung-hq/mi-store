@@ -1,17 +1,17 @@
-const webpack = require('webpack');
 const path = require('path');
 
-const APP_DIR = path.resolve(__dirname, 'src/main/resources/static/js');
-const BUILD_DIR = path.resolve(__dirname, 'src/main/resources/static/build');
+const APP_DIR = path.resolve(__dirname, 'src/main/resources/static/webapp');
+const BUILD_DIR = path.resolve(__dirname, 'src/main/resources/static/dist');
 
 module.exports = {
-    entry: [
-        APP_DIR + '/src/index.js'
-    ],
+    entry: {
+        app: APP_DIR + '/src/index.js'
+    },
     output: {
         path: BUILD_DIR,
-        filename: 'bundle.js',
-        publicPath: '/'
+        filename: '[name].bundle.js',
+        // setting publicPath for live reloading
+        publicPath: '/dist/'
     },
     module: {
         rules: [
